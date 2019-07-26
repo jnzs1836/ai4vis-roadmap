@@ -104,15 +104,69 @@ There are far less websites using svg-based visualizations like theconversation.
 
 
 
-## Automatical Genration of Visualization
+## Automatic Generation of Visualization
 
 To-do
 
+## Inverse Engineering on Visualization and Computational Visualization Interpretation
 
-## Inverse Engineering on Viusalization and Visualization Recognition
+There are two basic component types in a visualization image: text and graphical elements. In order to successfully deconstruct a visualization, one must be able to recognize both. However, most prior work focuses on graphical elements.
+
+### Interpreting Graphical Elements in Visualizations
+
+*Deconstructing and restyling D3 visualizations*
+
+In this paper, Harper and Agrawala proposed a system for deconstructing D3.js visualizations that extracts data, marks and mappings between them.  The technique exploits the fact that one can access both SVG elements and data directly in the web browser. The technique is limited in SVG-based visualizations which is only a small part of visualizations. 
 
 
 
+*A system for understanding imaged infographics and its applications.*
 
+This paper describes technical details and practical applications of the system we built for recognizing and understanding imaged infographics located in document pages. This technique perform vectorization on images and convert them into a set of lines, arcs in the vector form before graphical symbols are constructed. Then, it applied domain knowledge to to identify graphical symbols representing data for each chart type. 
+
+
+
+*ReVision: Automated Classification, Analysis and Redesign of Chart Images*
+
+ReVision applies computer vision and machine learning techniques to identify the chart type. It then extracts the graphical marks and infers the underlying data. Using a corpus of images drawn from the web, ReVision achieves an image classiﬁcation accuracy of 96% across ten chart categories. They labeled the data manually.
+
+### Interpreting Text in Visualizations
+
+*Reverse-Engineering Visualizations: Recovering Visual Encodings from Chart Images*
+
+This paper proposed a text analysis pipeline that identifies text elements in a chart image, determines their bounding boxes, recognizes the text content using OCR, and classifies their role in the chart (e.g., chart title, x-axis label, y-axis title, etc.). They also also train a Convolutional Neural Network that classifies the type of graphical mark used to encode data in a chart (e.g., bars, lines, points, or areas). Together, we leverage the inferred text and chart type information to recover a visual encoding specification in a declarative grammar similar to Vega-Lite [SMWH17] or Tableau’s VizQL [STH02]. This chart specification can then be used for indexing, search, or retargeting of the input visualization.
+
+
+
+### Extracting Data From Visualizations
+
+*Scalable algorithms for scholarly figure mining and semantics*
+
+The paper reported scalable algorithms for generating semantic metadata for figures. The system has four sequential modules:
+
++ Extraction of figure, caption and mention;
++ Binary classification of figures as compound (contains sub-figures) or not;
++ Three class classification of non compound figures as line graph, bar graph or others;
++ Automatic processing of line graphs to generate a textual summary;
+
+They inferred the textual summery simply based on the data trends.
+
+
+
+*Curve Separation for Line Graphs in Scholarly Documents*
+
+Line graphs are abundant in scholarly papers. They are usually generated from a data table and that data can not be accessed. One important step in an automated data extraction pipeline is the curve separation problem: segmenting the pixels into separate curves. Previous work in this domain has focused on raster graphics extracted from scholarly PDFs, whereas most scholarly plots are embedded as vector graphics. We report a system to extract these plots as SVG images and show how that can improve both the accuracy (90%) and the scalability (5-8 seconds) of the curve separation problem.
+
+
+
+*ChartSense: Interactive Data Extraction from Chart Images*
+
+ChartSense uses a semi-automatic approach to extract data from line, pie and bar charts.
+
+
+
+*iVoLVER: Interactive visual language for visualization extraction and reconstruction*
+
+iVoLVER relies on manual annotation to extract data and encodings.
 
 ## Text and Visualization
